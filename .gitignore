@@ -1,0 +1,25 @@
+/dem_ndim300_min5.model
+/dem_ndim300_min5.model.trainables.syn1neg.npy
+/dem_ndim300_min5.model.wv.vectors.npy
+/demall.csv
+/demdata.csv.gz
+/demdata.txt
+/GFG.csv
+/glove_100_3_polish.txt
+/modeltest1/saved_model.pb
+/modeltest1/variables/variables.data-00000-of-00001
+/modeltest1/variables/variables.index
+/project-tensorboard/log-1/checkpoint
+/project-tensorboard/log-1/embedding.ckpt-1.data-00000-of-00001
+/project-tensorboard/log-1/embedding.ckpt-1.index
+/project-tensorboard/log-1/embedding.ckpt-1_temp_ebf20e9e96d8496c8ca12d03c265a0a0/part-00000-of-00001.data-00000-of-00001
+/project-tensorboard/log-1/embedding.ckpt-1_temp_ebf20e9e96d8496c8ca12d03c265a0a0/part-00000-of-00001.index
+/project-tensorboard/log-1/metadata.tsv
+/project-tensorboard/log-1/projector_config.pbtxt
+/Sentiment Analysis Dataset.csv
+/testdata.manual.2009.06.14.csv
+/training.1600000.processed.noemoticon.csv
+/tsne_FT_100k.npy
+/tsne_FT_1M.npy
+/tsne_glove10k.npy
+/tsne_w2v.npy
