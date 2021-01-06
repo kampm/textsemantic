@@ -40,3 +40,6 @@
 /wiki.fasttext-no-n-grams.model.wv.vectors_vocab.npy
 /wiki.word2vec.model
 /wiki.word2vec.model.syn1neg.npy
+/demofile2.txt
+/wikifasttextlibcbow.bin
+/wikifasttextlibskipgram.bin

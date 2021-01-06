@@ -1,0 +1,63 @@
+# ================================ FT gensim  ================================ #
+#FastText skipgram  w/o char n-grams
+Evaluating word analogies for top 300000 words in the model on questions-words-pl.txt
+capital-common-countries: 33.8% (142/420)
+capital-world: 23.7% (1423/6006)
+city-in-state: 36.4% (48/132)
+currency: 3.2% (15/462)
+family: 40.6% (139/342)
+gram1-adjective-to-adverb: 6.3% (37/588)
+gram2-opposite: 27.8% (15/54)
+gram3-comparative: 50.2% (232/462)
+gram4-superlative: 20.5% (43/210)
+gram5-present-participle: 8.6% (18/210)
+gram6-nationality-adjective: 34.2% (561/1640)
+gram8-plural: 24.6% (260/1056)
+gram9-verb-aspect: 30.0% (9/30)
+Quadruplets with out-of-vocabulary words: 52.7%
+NB: analogies containing OOV words were skipped from evaluation! To change this behavior, use "dummy4unknown=True"
+Semantic: 1767/7362, Accuracy: 24.00%
+Syntactic: 1175/4250, Accuracy: 27.65%
+Total accuracy: 25.3% (2942/11612)
+
+#FastText skipgram char n-grams
+Evaluating word analogies for top 300000 words in the model on questions-words-pl.txt
+capital-common-countries: 16.4% (69/420)
+capital-world: 3.9% (234/6006)
+city-in-state: 12.9% (17/132)
+currency: 0.4% (2/462)
+family: 18.4% (63/342)
+gram1-adjective-to-adverb: 46.9% (276/588)
+gram2-opposite: 88.9% (48/54)
+gram3-comparative: 68.0% (314/462)
+gram4-superlative: 54.3% (114/210)
+gram5-present-participle: 81.9% (172/210)
+gram6-nationality-adjective: 84.0% (1377/1640)
+gram8-plural: 29.8% (315/1056)
+gram9-verb-aspect: 23.3% (7/30)
+Quadruplets with out-of-vocabulary words: 52.7%
+NB: analogies containing OOV words were skipped from evaluation! To change this behavior, use "dummy4unknown=True"
+Semantic: 385/7362, Accuracy: 5.23%
+Syntactic: 2623/4250, Accuracy: 61.72%
+Total accuracy: 25.9% (3008/11612)
+
+# ================================ w2v gensim  ================================ #
+Evaluating word analogies for top 300000 words in the model on questions-words-pl.txt
+capital-common-countries: 33.1% (139/420)
+capital-world: 22.0% (1323/6006)
+city-in-state: 36.4% (48/132)
+currency: 2.4% (11/462)
+family: 42.4% (145/342)
+gram1-adjective-to-adverb: 5.8% (34/588)
+gram2-opposite: 13.0% (7/54)
+gram3-comparative: 50.9% (235/462)
+gram4-superlative: 24.3% (51/210)
+gram5-present-participle: 7.6% (16/210)
+gram6-nationality-adjective: 30.7% (504/1640)
+gram8-plural: 28.8% (304/1056)
+gram9-verb-aspect: 20.0% (6/30)
+Quadruplets with out-of-vocabulary words: 52.7%
+NB: analogies containing OOV words were skipped from evaluation! To change this behavior, use "dummy4unknown=True"
+Semantic: 1666/7362, Accuracy: 22.63%
+Syntactic: 1157/4250, Accuracy: 27.22%
+Total accuracy: 24.3% (2823/11612)
