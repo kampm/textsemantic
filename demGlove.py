@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Dec 21 21:46:37 2020
+Created on Mon Dec 21 21:46:38 2020
 
 @author: Kamil
 """
@@ -28,7 +28,7 @@ n_dim=300
 # embeddings = glove_model.fit(x_train)
 
 ####
-word2vec = KeyedVectors.load_word2vec_format("glove_100_3_polish.txt", limit=1000)
+word2vec = KeyedVectors.load_word2vec_format("glove_100_3_polish.txt", limit=10000)
 model=word2vec
 
 def kmean(word2vec,tsne_df,n_clus):    
@@ -49,7 +49,7 @@ def plt2html(tsne_w2v,word2vec,htmlname):
     
     # putting everything in a dataframe
     tsne_df = pd.DataFrame(tsne_w2v, columns=['x', 'y'])
-    tsne_df['words'] = list(word2vec.wv.vocab.keys())
+    tsne_df['words'] = list(word2vec.index_to_key)
     
     kmean(word2vec,tsne_df,n_clus)
     
@@ -64,11 +64,12 @@ def plt2html(tsne_w2v,word2vec,htmlname):
     output_file(htmlname)
     show(plot_tfidf)
 
+
 print(word2vec.similar_by_word("bierut"))
 
 
 # getting a list of word vectors. limit to 10000. each is of 200 dimensions
-word_vectors = [word2vec[w] for w in list(word2vec.wv.vocab.keys())]
+word_vectors = [word2vec[w] for w in list(word2vec.index_to_key)]
 
 # dimensionality reduction. converting the vectors to 2d vectors
 tsne_model = TSNE(n_components=2, verbose=1, random_state=0,n_jobs=-1)
@@ -79,7 +80,26 @@ tsne_w2v = tsne_model.fit_transform(word_vectors)
 n_clus=15
 categ = list(map(str, range(0,n_clus,1)))
 
-plt2html(tsne_w2v, word2vec, "golvepltest10k100dim.html")
+plt2html(tsne_w2v, word2vec, "usunactest.html")
+
+def plot_with_matplotlib(x_vals, y_vals, labels):
+    import matplotlib.pyplot as plt
+    import random
+
+    random.seed(0)
+
+    plt.figure(figsize=(12, 12))
+    plt.scatter(x_vals, y_vals)
+
+    #
+    # Label randomly subsampled 25 data points
+    #
+    indices = list(range(len(labels)))
+    selected_indices = random.sample(indices, 25)
+    for i in selected_indices:
+        plt.annotate(labels[i], (x_vals[i], y_vals[i]))
+
+plot_with_matplotlib(tsne_df['x'], tsne_df['y'],tsne_df['words'])
 
 
 ##test kmeans

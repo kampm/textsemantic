@@ -23,3 +23,11 @@
 /tsne_FT_1M.npy
 /tsne_glove10k.npy
 /tsne_w2v.npy
+/data/None.txt
+/data/plwiki-20210101-pages-articles-multistream.xml.bz2
+/data/plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2
+/data/plwiki-20210101-pages-articles-multistream-index.txt
+/wikiDoc2Vec(dbow+w,d200,n5,w8,mc10,s0.001,t4).model
+/wikiDoc2Vec(dbow+w,d200,n5,w8,mc10,s0.001,t4).model.dv.vectors.npy
+/wikiDoc2Vec(dbow+w,d200,n5,w8,mc10,s0.001,t4).model.syn1neg.npy
+/wikiDoc2Vec(dbow+w,d200,n5,w8,mc10,s0.001,t4).model.wv.vectors.npy
