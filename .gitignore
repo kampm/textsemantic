@@ -31,3 +31,12 @@
 /wikiDoc2Vec(dbow+w,d200,n5,w8,mc10,s0.001,t4).model.dv.vectors.npy
 /wikiDoc2Vec(dbow+w,d200,n5,w8,mc10,s0.001,t4).model.syn1neg.npy
 /wikiDoc2Vec(dbow+w,d200,n5,w8,mc10,s0.001,t4).model.wv.vectors.npy
+/wiki.fasttext.model
+/wiki.fasttext.model.syn1neg.npy
+/wiki.fasttext.model.wv.vectors_ngrams.npy
+/wiki.fasttext.model.wv.vectors_vocab.npy
+/wiki.fasttext-no-n-grams.model
+/wiki.fasttext-no-n-grams.model.syn1neg.npy
+/wiki.fasttext-no-n-grams.model.wv.vectors_vocab.npy
+/wiki.word2vec.model
+/wiki.word2vec.model.syn1neg.npy
