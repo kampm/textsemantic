@@ -2,10 +2,11 @@
 
 ### Word2Vec trained with [Gensim 4](https://github.com/RaRe-Technologies/gensim)  
 
-10/10 plwiki [plwiki-20210101-pages-articles-multistream.xml.bz2](https://dumps.wikimedia.org/plwiki/20210101/plwiki-20210101-pages-articles-multistream.xml.bz2)  
+Evaluating word analogies for top 300000 words in the model on questions-words-pl.txt  
+
+10/10 plwiki [plwiki](https://dumps.wikimedia.org/plwiki/20210101/plwiki-20210101-pages-articles-multistream.xml.bz2)  
 corpus of 1008640 documents with 291075342 positions (total 2349518 articles, 304757007 positions before pruning articles shorter than 50 words)  
 lr = 0.025, context_window = 10, dim = 300, epoch = 5, minCount = 40  
-Evaluating word analogies for top 300000 words in the model on questions-words-pl.txt  
 
 Type | Value
 ------------ | -------------
@@ -30,10 +31,9 @@ Quadruplets with out-of-vocabulary words | 20.5%
 
 **Word2Vec** - [300d (Google Drive)](https://drive.google.com/file/d/1Vm9P5TmCd2PUsQiZNj976F7u1gpZzr4i/view?usp=sharing)
 
-1/10 plwiki [plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2](https://dumps.wikimedia.org/plwiki/20210101/plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2)  
+1/10 plwiki [plwiki](https://dumps.wikimedia.org/plwiki/20210101/plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2)  
 62382 articles, 1158218 unique tokens, 40486171 corpus positions  
 lr = 0.025, context_window = 10, dim = 300, epoch = 5, minCount = 40  
-Evaluating word analogies for top 300000 words in the model on questions-words-pl.txt  
 
 Type | Value
 ------------ | -------------
@@ -57,10 +57,8 @@ Quadruplets with out-of-vocabulary words | 52.7%
 
 **Word2Vec** - [300d (Google Drive)](https://drive.google.com/file/d/16Y6rQW3i8bWDe48tOiZi44uzYkUmFjUN/view?usp=sharing)
 
-1/10 plwiki [plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2](https://dumps.wikimedia.org/plwiki/20210101/plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2)  
-62382 articles, 1158218 unique tokens, 40486171 corpus positions  
+1/10 plwiki [plwiki](https://dumps.wikimedia.org/plwiki/20210101/plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2)  
 lr = 0.025, context_window = 5, dim = 100, epoch = 5, minCount = 5  
-Evaluating word analogies for top 300000 words in the model on questions-words-pl.txt  
 
 Type | Value
 ------------ | -------------
@@ -83,10 +81,8 @@ Quadruplets with out-of-vocabulary words | 16.8%
 ***Syntactic*** | 14.36% (921/6412) 
 **Total accuracy** | 13.4% (2732/20436)
 
-1/10 plwiki [plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2](https://dumps.wikimedia.org/plwiki/20210101/plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2)  
-62382 articles, 1158218 unique tokens, 40486171 corpus positions  
+1/10 plwiki [plwiki](https://dumps.wikimedia.org/plwiki/20210101/plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2)   
 lr = 0.025, context_window = 5, dim = 300, epoch = 5, minCount = 5  
-Evaluating word analogies for top 300000 words in the model on questions-words-pl.txt  
 
 Type | Value
 ------------ | -------------
@@ -113,10 +109,8 @@ Quadruplets with out-of-vocabulary words | 16.8%
 
 ### FastText trained with [Gensim 4](https://github.com/RaRe-Technologies/gensim)  
 
-10/10 plwiki [plwiki-20210101-pages-articles-multistream.xml.bz2](https://dumps.wikimedia.org/plwiki/20210101/plwiki-20210101-pages-articles-multistream.xml.bz2)  
-corpus of 1008640 documents with 291075342 positions (total 2349518 articles, 304757007 positions before pruning articles shorter than 50 words)  
+10/10 plwiki [plwiki](https://dumps.wikimedia.org/plwiki/20210101/plwiki-20210101-pages-articles-multistream.xml.bz2)  
 lr = 0.025, context_window = 10, dim = 300, epoch = 5, minCount = 40, maxn = 0  
-Evaluating word analogies for top 300000 words in the model on questions-words-pl.txt  
 
 Type | Value
 ------------ | -------------
@@ -141,10 +135,8 @@ Quadruplets with out-of-vocabulary words | 20.5%
 
 **FastText w/o char n-grams** - [300d (Google Drive)](https://drive.google.com/file/d/1QvZaaL4xAXTjrwVxO8HlyjKbTUiDwNb8/view?usp=sharing)  
 
-1/10 plwiki [plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2](https://dumps.wikimedia.org/plwiki/20210101/plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2)  
-62382 articles, 1158218 unique tokens, 40486171 corpus positions  
+1/10 plwiki [plwiki](https://dumps.wikimedia.org/plwiki/20210101/plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2)  
 lr = 0.025, context_window = 10, dim = 300, epoch = 5, minCount = 40, maxn = 0  
-Evaluating word analogies for top 300000 words in the model on questions-words-pl.txt  
 
 Type | Value
 ------------ | -------------
@@ -168,10 +160,8 @@ Quadruplets with out-of-vocabulary words | 52.7%
 
 **FastText w/o char n-grams** - [300d (Google Drive)](https://drive.google.com/file/d/1DnjUrgFAGOsn1KnQzFN9WuiDdujpZKml/view?usp=sharing)
 
-1/10 plwiki [plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2](https://dumps.wikimedia.org/plwiki/20210101/plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2)  
-62382 articles, 1158218 unique tokens, 40486171 corpus positions  
+1/10 plwiki [plwiki](https://dumps.wikimedia.org/plwiki/20210101/plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2)  
 lr = 0.025, context_window = 10, dim = 300, epoch = 5, minCount = 40  
-Evaluating word analogies for top 300000 words in the model on questions-words-pl.txt  
 
 Type | Value
 ------------ | -------------
@@ -197,8 +187,7 @@ Quadruplets with out-of-vocabulary words | 52.7%
 
 ### FastText trarined with [FastText 0.9.2](https://github.com/facebookresearch/fastText)  
 
-1/10 plwiki [plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2](https://dumps.wikimedia.org/plwiki/20210101/plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2)  
-62382 articles, 1158218 unique tokens, 40486171 corpus positions  
+1/10 plwiki [plwiki](https://dumps.wikimedia.org/plwiki/20210101/plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2)  
 model = 'skipgram', lr = 0.05, context_window = 5, dim = 100, epoch = 5, minCount = 5  
 
 Type | Value
@@ -207,8 +196,7 @@ Type | Value
 ***Syntactic*** | ~40% (3698/9224)   
 **Total accuracy** | ~28% (6972/24570)  
 
-1/10 plwiki [plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2](https://dumps.wikimedia.org/plwiki/20210101/plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2)  
-62382 articles, 1158218 unique tokens, 40486171 corpus positions  
+1/10 plwiki [plwiki](https://dumps.wikimedia.org/plwiki/20210101/plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2)  
 model = 'cbow', lr = 0.05, context_window = 5, dim = 100, epoch = 5, minCount = 5  
 
 Type | Value
@@ -217,8 +205,7 @@ Type | Value
 ***Syntactic*** | ~48% (4448/9224)   
 **Total accuracy** | ~21% (5123/24570)  Case sensitivity ~14% (3515/24570)  
 
-1/10 plwiki [plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2](https://dumps.wikimedia.org/plwiki/20210101/plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2)  
-62382 articles, 1158218 unique tokens, 40486171 corpus positions  
+1/10 plwiki [plwiki](https://dumps.wikimedia.org/plwiki/20210101/plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2)  
 model = 'skipgram', lr = 0.025, context_window = 10, dim = 300, epoch = 5, minCount = 40, maxn = 0  
 
 Type | Value
@@ -227,8 +214,7 @@ Type | Value
 ***Syntactic*** | ~16.7% (1543/9224)   
 **Total accuracy** | ~18% (4485/24570)  
 
-1/10 plwiki [plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2](https://dumps.wikimedia.org/plwiki/20210101/plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2)  
-62382 articles, 1158218 unique tokens, 40486171 corpus positions  
+1/10 plwiki [plwiki](https://dumps.wikimedia.org/plwiki/20210101/plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2)  
 model = 'cbow', lr = 0.025, context_window = 10, dim = 300, epoch = 5, minCount = 40, maxn = 0  
 
 Type | Value
