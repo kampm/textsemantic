@@ -45,3 +45,9 @@
 /wikifasttextlibskipgram.bin
 /wikifasttextlibcbowsamepararms.bin
 /wikifasttextlibskipgramsamepararms.bin
+/wiki.courpus
+/wiki.mm
+/wiki.mm.index
+/wikifull.word2vec.model
+/wikifull.word2vec.model.syn1neg.npy
+/wikifull.word2vec.model.wv.vectors.npy

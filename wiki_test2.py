@@ -16,9 +16,12 @@ import logging
 logging.basicConfig(
     format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
 
-wiki = WikiCorpus("data/plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2",
+# wiki = WikiCorpus("data/plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2",
+#                   processes=4, lemmatize=False)
+wiki = WikiCorpus("data/plwiki-20210101-pages-articles-multistream.xml.bz2",
                   processes=4, lemmatize=False)
-
+from gensim.corpora.mmcorpus import MmCorpus
+MmCorpus.serialize('wiki.mm', wiki)
 # Dla biblioteki fasttext
 # tab = []
 # for text in wiki.get_texts():
@@ -64,7 +67,7 @@ def analogies(model):
 # from gensim.models import TfidfModel
 # tfidf = TfidfModel(wiki)
 
-
+# According to paper, it suggests that using 5 ~ 20 negative words in smaller data set while only using 2–5 words for large dataset
 class MySentences(object):
     def __iter__(self):
         for text in wiki.get_texts():
@@ -80,12 +83,12 @@ word2vec = Word2Vec.load('wiki.word2vec.model')
 analogies(word2vec)
 qw = print_accuracy(word2vec)
 
-word2vec2 = Word2Vec(sentences,vector_size=300)
+word2vec2 = Word2Vec(sentences,vector_size=300,window=10, min_count=40, workers=4, sample= 1e-3)
 analogies(word2vec2)
 qw = print_accuracy(word2vec2)
 
 # vocab = word2vec.wv.index_to_key
-# word2vec.save('wiki.word2vec.model')
+# word2vec2.save('wikifull.word2vec.model')
 
 # ================ FT gensim
 
