@@ -51,3 +51,7 @@
 /wikifull.word2vec.model
 /wikifull.word2vec.model.syn1neg.npy
 /wikifull.word2vec.model.wv.vectors.npy
+/fasttext_no_char_n-grams_plwiki_dim300_window10_mincount40ns5.7z
+/wikifull.fasttext-no-n-grams.model
+/wikifull.fasttext-no-n-grams.model.syn1neg.npy
+/wikifull.fasttext-no-n-grams.model.wv.vectors_vocab.npy

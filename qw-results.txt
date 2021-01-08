@@ -108,10 +108,11 @@ Semantic: 1666/7362, Accuracy: 22.63%
 Syntactic: 1157/4250, Accuracy: 27.22%
 Total accuracy: 24.3% (2823/11612)
 
-3h40m
+~3h40m
 #Word2Vec lr 0.025 context window 10 dim 300 epoch 5 minCount 40 
 model:plwiki-20210101-pages-articles-multistream.xml.bz2
 10/10 plwiki corpus of 1008640 documents with 291075342 positions (total 2349518 articles, 304757007 positions before pruning articles shorter than 50 words)
+Evaluating word analogies for top 300000 words in the model on questions-words-pl.txt
 capital-common-countries: 54.7% (277/506)
 capital-world: 42.9% (5045/11772)
 city-in-state: 78.8% (104/132)
@@ -131,6 +132,31 @@ NB: analogies containing OOV words were skipped from evaluation! To change this 
 Semantic: 5665/13430, Accuracy: 42.18%
 Syntactic: 2474/6114, Accuracy: 40.46%
 Total accuracy: 41.6% (8139/19544)
+
+3h44
+#FastText skipgram  w/o char n-grams lr 0.025 context window 10 dim 300 epoch 5 minCount 40 maxn 0 buckets 2000000 t 0.001
+model:plwiki-20210101-pages-articles-multistream.xml.bz2
+10/10 plwiki corpus of 1008640 documents with 291075342 positions (total 2349518 articles, 304757007 positions before pruning articles shorter than 50 words)
+Evaluating word analogies for top 300000 words in the model on questions-words-pl.txt
+capital-common-countries: 56.9% (288/506)
+capital-world: 43.4% (5105/11772)
+city-in-state: 78.0% (103/132)
+currency: 2.2% (13/600)
+family: 54.3% (228/420)
+gram1-adjective-to-adverb: 6.6% (53/800)
+gram2-opposite: 19.7% (30/152)
+gram3-comparative: 47.1% (410/870)
+gram4-superlative: 21.5% (109/506)
+gram5-present-participle: 19.4% (136/702)
+gram6-nationality-adjective: 82.4% (1351/1640)
+gram7-past-tense: 21.4% (12/56)
+gram8-plural: 28.0% (373/1332)
+gram9-verb-aspect: 32.1% (18/56)
+Quadruplets with out-of-vocabulary words: 20.5%
+NB: analogies containing OOV words were skipped from evaluation! To change this behavior, use "dummy4unknown=True"
+Semantic: 5737/13430, Accuracy: 42.72%
+Syntactic: 2492/6114, Accuracy: 40.76%
+Total accuracy: 42.1% (8229/19544)
 
 
 # ================================ FastText  ================================ # with OOV words

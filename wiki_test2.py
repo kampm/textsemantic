@@ -98,10 +98,9 @@ print("FastText w/o char n-grams")
 fasttext = FastText.load('wiki.fasttext-no-n-grams.model')
 analogies(fasttext)
 
-
 qw = print_accuracy(fasttext)
 # print(str(fasttext))
-# fasttext.save('wiki.fasttext-no-n-grams.model')
+# fasttext.save('wikifull.fasttext-no-n-grams.model')
 
 
 print("FastText")
