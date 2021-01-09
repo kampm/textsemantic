@@ -55,3 +55,7 @@
 /wikifull.fasttext-no-n-grams.model
 /wikifull.fasttext-no-n-grams.model.syn1neg.npy
 /wikifull.fasttext-no-n-grams.model.wv.vectors_vocab.npy
+/dousun.txt
+/dousun2.py
+/file.txt
+/file2.txt

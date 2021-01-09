@@ -222,3 +222,36 @@ Type | Value
 ***Semantic*** | ~13% (2054/15346)   
 ***Syntactic*** | ~13% (1195/9224)   
 **Total accuracy** | ~13% (3249/24570)
+
+
+### Comparation of NLP models
+
+![compnlp](compnlp.png)
+
+1#FastText skipgram  w/o char n-grams lr 0.025 context window 10 dim 300 epoch 5 minCount 40 maxn 0 buckets 2000000 t 0.001
+2#FastText skipgram char n-grams lr 0.025 context window 10 dim 300 epoch 5 minCount 40 minn 3 maxn 6 buckets 2000000 t 0.001
+3#Word2Vec lr 0.025 context window 5 dim 100 epoch 5 minCount 5 
+4#Word2Vec lr 0.025 context window 5 dim 300 epoch 5 minCount 5 
+5#Word2Vec lr 0.025 context window 10 dim 300 epoch 5 minCount 40 
+6#Word2Vec lr 0.025 context window 10 dim 300 epoch 5 minCount 40 
+7#FastText skipgram  w/o char n-grams lr 0.025 context window 10 dim 300 epoch 5 minCount 40 maxn 0 buckets 2000000 t 0.001
+8#FastText cbow lr 0.05 context window 5 dim 100 epoch 5 minCount 5 minn 3 maxn 6 buckets 2000000 t 0.0001
+9#FastText skipgram lr 0.05 context window 5 dim 100 epoch 5 minCount 5 minn 3 maxn 6 buckets 2000000 t 0.0001
+10#FastText skipgram lr 0.025 context window 10 dim 300 epoch 5 minCount 40 maxn 0 buckets 2000000 t 0.0001
+11#FastText cbow lr 0.025 context window 10 dim 300 epoch 5 minCount 40 maxn 0 buckets 2000000 t 0.0001
+12# [glove_100_3_polish](https://github.com/sdadas/polish-nlp-resources/releases/download/v1.0/glove.zip)
+13# [glove_300_3_polish](https://github.com/sdadas/polish-nlp-resources/releases/download/glove-hd/glove_300_3_polish.zip.001)
+[http://dsmodels.nlp.ipipan.waw.pl](http://dsmodels.nlp.ipipan.waw.pl)  
+14#wiki-forms-all-100-cbow-ns-30-it100.txt 
+15#wiki-forms-all-100-cbow-hs 
+16#wiki-forms-all-100-cbow-ns.txt
+17#wiki-forms-all-100-skipg-hs.txt
+18#wiki-forms-all-100-skipg-ns
+19#wiki-forms-all-100-skipg-ns-30-it100
+20#wiki-forms-all-300-cbow-hs
+21#wiki-forms-all-300-cbow-hs-30
+22#wiki-forms-all-300-cbow-ns
+23#wiki-forms-all-300-cbow-ns-30
+24#wiki-forms-all-300-skipg-hs
+25#wiki-forms-all-300-skipg-ns
+26#nkjp+wiki-forms-all-300-skipg-ns-50 

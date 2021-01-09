@@ -1,4 +1,3 @@
-model:plwiki-20210101-pages-articles-multistream1.xml-p1p187037.bz2
 1/10 plwiki 62382 articles, 1158218 unique tokens, 40486171 corpus positions
 # ================================ gensim  ================================ #
 #FastText skipgram  w/o char n-grams lr 0.025 context window 10 dim 300 epoch 5 minCount 40 maxn 0 buckets 2000000 t 0.001
@@ -17,7 +16,6 @@ gram6-nationality-adjective: 34.2% (561/1640)
 gram8-plural: 24.6% (260/1056)
 gram9-verb-aspect: 30.0% (9/30)
 Quadruplets with out-of-vocabulary words: 52.7%
-NB: analogies containing OOV words were skipped from evaluation! To change this behavior, use "dummy4unknown=True"
 Semantic: 1767/7362, Accuracy: 24.00%
 Syntactic: 1175/4250, Accuracy: 27.65%
 Total accuracy: 25.3% (2942/11612)
@@ -38,7 +36,6 @@ gram6-nationality-adjective: 84.0% (1377/1640)
 gram8-plural: 29.8% (315/1056)
 gram9-verb-aspect: 23.3% (7/30)
 Quadruplets with out-of-vocabulary words: 52.7%
-NB: analogies containing OOV words were skipped from evaluation! To change this behavior, use "dummy4unknown=True"
 Semantic: 385/7362, Accuracy: 5.23%
 Syntactic: 2623/4250, Accuracy: 61.72%
 Total accuracy: 25.9% (3008/11612)
@@ -60,7 +57,6 @@ gram7-past-tense: 0.9% (1/110)
 gram8-plural: 13.9% (185/1332)
 gram9-verb-aspect: 5.3% (7/132)
 Quadruplets with out-of-vocabulary words: 16.8%
-NB: analogies containing OOV words were skipped from evaluation! To change this behavior, use "dummy4unknown=True"
 Semantic: 1811/14024, Accuracy: 12.91%
 Syntactic: 921/6412, Accuracy: 14.36%
 Total accuracy: 13.4% (2732/20436)
@@ -82,7 +78,6 @@ gram7-past-tense: 0.9% (1/110)
 gram8-plural: 14.6% (195/1332)
 gram9-verb-aspect: 3.8% (5/132)
 Quadruplets with out-of-vocabulary words: 16.8%
-NB: analogies containing OOV words were skipped from evaluation! To change this behavior, use "dummy4unknown=True"
 Semantic: 1872/14024, Accuracy: 13.35%
 Syntactic: 991/6412, Accuracy: 15.46%
 Total accuracy: 14.0% (2863/20436)
@@ -103,7 +98,6 @@ gram6-nationality-adjective: 30.7% (504/1640)
 gram8-plural: 28.8% (304/1056)
 gram9-verb-aspect: 20.0% (6/30)
 Quadruplets with out-of-vocabulary words: 52.7%
-NB: analogies containing OOV words were skipped from evaluation! To change this behavior, use "dummy4unknown=True"
 Semantic: 1666/7362, Accuracy: 22.63%
 Syntactic: 1157/4250, Accuracy: 27.22%
 Total accuracy: 24.3% (2823/11612)
@@ -128,7 +122,6 @@ gram7-past-tense: 17.9% (10/56)
 gram8-plural: 27.6% (368/1332)
 gram9-verb-aspect: 32.1% (18/56)
 Quadruplets with out-of-vocabulary words: 20.5%
-NB: analogies containing OOV words were skipped from evaluation! To change this behavior, use "dummy4unknown=True"
 Semantic: 5665/13430, Accuracy: 42.18%
 Syntactic: 2474/6114, Accuracy: 40.46%
 Total accuracy: 41.6% (8139/19544)
@@ -153,7 +146,6 @@ gram7-past-tense: 21.4% (12/56)
 gram8-plural: 28.0% (373/1332)
 gram9-verb-aspect: 32.1% (18/56)
 Quadruplets with out-of-vocabulary words: 20.5%
-NB: analogies containing OOV words were skipped from evaluation! To change this behavior, use "dummy4unknown=True"
 Semantic: 5737/13430, Accuracy: 42.72%
 Syntactic: 2492/6114, Accuracy: 40.76%
 Total accuracy: 42.1% (8229/19544)
@@ -161,22 +153,308 @@ Total accuracy: 42.1% (8229/19544)
 
 # ================================ FastText  ================================ # with OOV words
 #model1 cbow lr 0.05 context window 5 dim 100 epoch 5 minCount 5 minn 3 maxn 6 buckets 2000000 t 0.0001
-Semantic: 675/15346, Accuracy: ~~4%
-Syntactic: 4448/9224, Accuracy: ~~48%
-Total accuracy: Case sensitivity ~~14% (3515/24570) w/o ~~21% (5123/24570)
+Semantic: 675/15346, Accuracy: 4%
+Syntactic: 4448/9224, Accuracy: 48%
+Total accuracy: 21% (5123/24570)
 
 #model2 skipgram lr 0.05 context window 5 dim 100 epoch 5 minCount 5 minn 3 maxn 6 buckets 2000000 t 0.0001
-Semantic: 3274/15346, Accuracy: ~~21.3%
-Syntactic: 3698/9224, Accuracy: ~~40%
-Total accuracy: Case sensitivity                    w/o ~~28% (6972/24570)
+Semantic: 3274/15346, Accuracy: 21.3%
+Syntactic: 3698/9224, Accuracy: 40%
+Total accuracy: 28% (6972/24570)
 
 #model3 skipgram lr 0.025 context window 10 dim 300 epoch 5 minCount 40 maxn 0 buckets 2000000 t 0.0001
-Semantic: 2942/15346, Accurancy: ~~19%
-Syntactic: 1543/9224, Accurancy: ~~16.7%
-Total accuracy: Case sensitivity                    w/o ~~18% (4485/24570)
+Semantic: 2942/15346, Accurancy: 19%
+Syntactic: 1543/9224, Accurancy: 16.7%
+Total accuracy: 18% (4485/24570)
 
 #model4 cbow lr 0.025 context window 10 dim 300 epoch 5 minCount 40 maxn 0 buckets 2000000 t 0.0001
-Semantic: 2054/15346, Accurancy: ~~13%
-Syntactic: 1195/9224, Accurancy: ~~13%
-Total accuracy: Case sensitivity                    w/o ~~13% (3249/24570)
+Semantic: 2054/15346, Accurancy: 13%
+Syntactic: 1195/9224, Accurancy: 13%
+Total accuracy: 13% (3249/24570)
 
+
+
+#########git models 
+
+#https://github.com/sdadas/polish-nlp-resources/releases/download/v1.0/glove.zip
+Semantic: 3191/10808, Accuracy: 29.52%
+Syntactic: 1478/3152, Accuracy: 46.89%
+Total accuracy: 33.4% (4669/13960)
+
+
+#https://github.com/sdadas/polish-nlp-resources/releases/download/glove-hd/glove_300_3_polish.zip.001
+capital-common-countries: 60.0% (228/380)
+capital-world: 38.3% (3640/9506)
+currency: 7.5% (49/650)
+family: 70.6% (192/272)
+gram1-adjective-to-adverb: 34.3% (294/858)
+gram2-opposite: 31.7% (189/596)
+gram3-comparative: 58.3% (7/12)
+gram4-superlative: 16.7% (1/6)
+gram6-nationality-adjective: 84.6% (1127/1332)
+gram8-plural: 45.2% (19/42)
+gram9-verb-aspect: 25.5% (78/306)
+Quadruplets with out-of-vocabulary words: 43.2%
+Semantic: 4109/10808, Accuracy: 38.02%
+Syntactic: 1715/3152, Accuracy: 54.41%
+Total accuracy: 41.7% (5824/13960)
+
+
+#http://dsmodels.nlp.ipipan.waw.pl/dsmodels/wiki-forms-all-100-cbow-ns-30-it100.txt.gz
+capital-common-countries: 21.9% (111/506)
+capital-world: 14.6% (1660/11342)
+city-in-state: 36.5% (57/156)
+currency: 1.3% (7/552)
+family: 45.0% (189/420)
+gram1-adjective-to-adverb: 10.2% (76/744)
+gram2-opposite: 11.8% (18/152)
+gram3-comparative: 41.5% (361/870)
+gram4-superlative: 24.5% (93/380)
+gram5-present-participle: 35.1% (194/552)
+gram6-nationality-adjective: 58.8% (964/1640)
+gram8-plural: 19.3% (257/1332)
+gram9-verb-aspect: 25.0% (18/72)
+Quadruplets with out-of-vocabulary words: 23.8%
+Semantic: 2024/12976, Accuracy: 15.60%
+Syntactic: 1981/5742, Accuracy: 34.50%
+Total accuracy: 21.4% (4005/18718)
+
+
+#http://dsmodels.nlp.ipipan.waw.pl/dsmodels/wiki-forms-all-100-cbow-hs.txt.gz
+capital-common-countries: 10.3% (52/506)
+capital-world: 2.3% (269/11772)
+city-in-state: 16.0% (25/156)
+currency: 1.3% (8/600)
+family: 27.9% (117/420)
+gram1-adjective-to-adverb: 5.6% (45/800)
+gram2-opposite: 5.8% (12/206)
+gram3-comparative: 30.7% (267/870)
+gram4-superlative: 13.2% (67/506)
+gram5-present-participle: 10.6% (80/756)
+gram6-nationality-adjective: 28.7% (471/1640)
+gram8-plural: 9.9% (132/1332)
+gram9-verb-aspect: 12.2% (11/90)
+Quadruplets with out-of-vocabulary words: 20.0%
+Semantic: 471/13454, Accuracy: 3.50%
+Syntactic: 1085/6200, Accuracy: 17.50%
+Total accuracy: 7.9% (1556/19654)
+
+
+#wiki-forms-all-100-cbow-ns.txt
+capital-common-countries: 19.4% (98/506)
+capital-world: 12.8% (1505/11772)
+city-in-state: 20.5% (32/156)
+currency: 1.0% (6/600)
+family: 41.2% (173/420)
+gram1-adjective-to-adverb: 8.2% (66/800)
+gram2-opposite: 9.2% (19/206)
+gram3-comparative: 40.5% (352/870)
+gram4-superlative: 22.1% (112/506)
+gram5-present-participle: 20.2% (153/756)
+gram6-nationality-adjective: 54.3% (890/1640)
+gram8-plural: 17.9% (238/1332)
+gram9-verb-aspect: 12.2% (11/90)
+Quadruplets with out-of-vocabulary words: 20.0%
+Semantic: 1814/13454, Accuracy: 13.48%
+Syntactic: 1841/6200, Accuracy: 29.69%
+Total accuracy: 18.6% (3655/19654)
+
+
+#wiki-forms-all-100-skipg-hs.txt
+capital-common-countries: 27.5% (139/506)
+capital-world: 18.1% (2134/11772)
+city-in-state: 32.7% (51/156)
+currency: 1.0% (6/600)
+family: 36.7% (154/420)
+gram1-adjective-to-adverb: 3.8% (30/800)
+gram2-opposite: 7.8% (16/206)
+gram3-comparative: 35.4% (308/870)
+gram4-superlative: 15.2% (77/506)
+gram5-present-participle: 19.6% (148/756)
+gram6-nationality-adjective: 49.8% (817/1640)
+gram8-plural: 21.1% (281/1332)
+gram9-verb-aspect: 20.0% (18/90)
+Quadruplets with out-of-vocabulary words: 20.0%
+Semantic: 2484/13454, Accuracy: 18.46%
+Syntactic: 1695/6200, Accuracy: 27.34%
+Total accuracy: 21.3% (4179/19654)
+
+
+#wiki-forms-all-100-skipg-ns
+capital-common-countries: 42.7% (216/506)
+capital-world: 23.8% (2806/11772)
+city-in-state: 37.2% (58/156)
+currency: 1.0% (6/600)
+family: 41.4% (174/420)
+gram1-adjective-to-adverb: 3.8% (30/800)
+gram2-opposite: 12.1% (25/206)
+gram3-comparative: 43.2% (376/870)
+gram4-superlative: 20.2% (102/506)
+gram5-present-participle: 26.9% (203/756)
+gram6-nationality-adjective: 65.5% (1075/1640)
+gram8-plural: 28.5% (379/1332)
+gram9-verb-aspect: 20.0% (18/90)
+Quadruplets with out-of-vocabulary words: 20.0%
+Semantic: 3260/13454, Accuracy: 24.23%
+Syntactic: 2208/6200, Accuracy: 35.61%
+Total accuracy: 27.8% (5468/19654)
+
+
+#wiki-forms-all-100-skipg-ns-30-it100
+capital-common-countries: 44.1% (223/506)
+capital-world: 25.6% (2906/11342)
+city-in-state: 47.4% (74/156)
+currency: 0.7% (4/552)
+family: 42.6% (179/420)
+gram1-adjective-to-adverb: 6.3% (47/744)
+gram2-opposite: 11.8% (18/152)
+gram3-comparative: 36.1% (314/870)
+gram4-superlative: 28.2% (107/380)
+gram5-present-participle: 31.5% (174/552)
+gram6-nationality-adjective: 70.2% (1151/1640)
+gram8-plural: 29.1% (387/1332)
+gram9-verb-aspect: 25.0% (18/72)
+Quadruplets with out-of-vocabulary words: 23.8%
+Semantic: 3386/12976, Accuracy: 26.09%
+Syntactic: 2216/5742, Accuracy: 38.59%
+Total accuracy: 29.9% (5602/18718)
+
+
+#wiki-forms-all-300-cbow-hs
+capital-common-countries: 18.4% (93/506)
+capital-world: 5.5% (649/11772)
+city-in-state: 23.7% (37/156)
+currency: 0.2% (1/600)
+family: 31.7% (133/420)
+gram1-adjective-to-adverb: 7.6% (61/800)
+gram2-opposite: 9.2% (19/206)
+gram3-comparative: 38.3% (333/870)
+gram4-superlative: 13.0% (66/506)
+gram5-present-participle: 17.3% (131/756)
+gram6-nationality-adjective: 47.1% (773/1640)
+gram8-plural: 14.9% (198/1332)
+gram9-verb-aspect: 11.1% (10/90)
+Quadruplets with out-of-vocabulary words: 20.0%
+Semantic: 913/13454, Accuracy: 6.79%
+Syntactic: 1591/6200, Accuracy: 25.66%
+Total accuracy: 12.7% (2504/19654)
+
+
+#wiki-forms-all-300-cbow-hs-30
+capital-common-countries: 17.6% (89/506)
+capital-world: 5.7% (642/11342)
+city-in-state: 20.5% (32/156)
+currency: 0.5% (3/552)
+family: 31.7% (133/420)
+gram1-adjective-to-adverb: 5.8% (43/744)
+gram2-opposite: 7.9% (12/152)
+gram3-comparative: 37.5% (326/870)
+gram4-superlative: 18.9% (72/380)
+gram5-present-participle: 23.9% (132/552)
+gram6-nationality-adjective: 44.3% (727/1640)
+gram8-plural: 14.3% (190/1332)
+gram9-verb-aspect: 13.9% (10/72)
+Quadruplets with out-of-vocabulary words: 23.8%
+Semantic: 899/12976, Accuracy: 6.93%
+Syntactic: 1512/5742, Accuracy: 26.33%
+Total accuracy: 12.9% (2411/18718)
+
+
+#wiki-forms-all-300-cbow-ns
+capital-common-countries: 27.9% (141/506)
+capital-world: 17.4% (2045/11772)
+city-in-state: 28.8% (45/156)
+currency: 1.7% (10/600)
+family: 46.2% (194/420)
+gram1-adjective-to-adverb: 9.5% (76/800)
+gram2-opposite: 13.6% (28/206)
+gram3-comparative: 49.7% (432/870)
+gram4-superlative: 29.1% (147/506)
+gram5-present-participle: 23.5% (178/756)
+gram6-nationality-adjective: 69.6% (1141/1640)
+gram8-plural: 21.1% (281/1332)
+gram9-verb-aspect: 14.4% (13/90)
+Quadruplets with out-of-vocabulary words: 20.0%
+Semantic: 2435/13454, Accuracy: 18.10%
+Syntactic: 2296/6200, Accuracy: 37.03%
+Total accuracy: 24.1% (4731/19654)
+
+
+#wiki-forms-all-300-cbow-ns-30
+capital-common-countries: 28.5% (144/506)
+capital-world: 19.1% (2163/11342)
+city-in-state: 32.1% (50/156)
+currency: 1.1% (6/552)
+family: 44.3% (186/420)
+gram1-adjective-to-adverb: 8.2% (61/744)
+gram2-opposite: 16.4% (25/152)
+gram3-comparative: 48.7% (424/870)
+gram4-superlative: 33.7% (128/380)
+gram5-present-participle: 34.1% (188/552)
+gram6-nationality-adjective: 69.3% (1136/1640)
+gram8-plural: 19.6% (261/1332)
+gram9-verb-aspect: 23.6% (17/72)
+Quadruplets with out-of-vocabulary words: 23.8%
+Semantic: 2549/12976, Accuracy: 19.64%
+Syntactic: 2240/5742, Accuracy: 39.01%
+Total accuracy: 25.6% (4789/18718)
+
+
+#wiki-forms-all-300-skipg-hs
+capital-common-countries: 49.4% (250/506)
+capital-world: 24.8% (2917/11772)
+city-in-state: 59.0% (92/156)
+currency: 1.0% (6/600)
+family: 42.6% (179/420)
+gram1-adjective-to-adverb: 5.4% (43/800)
+gram2-opposite: 16.5% (34/206)
+gram3-comparative: 40.9% (356/870)
+gram4-superlative: 14.6% (74/506)
+gram5-present-participle: 17.6% (133/756)
+gram6-nationality-adjective: 60.3% (989/1640)
+gram8-plural: 24.6% (328/1332)
+gram9-verb-aspect: 20.0% (18/90)
+Quadruplets with out-of-vocabulary words: 20.0%
+Semantic: 3444/13454, Accuracy: 25.60%
+Syntactic: 1975/6200, Accuracy: 31.85%
+Total accuracy: 27.6% (5419/19654)
+
+
+#wiki-forms-all-300-skipg-ns
+capital-common-countries: 50.0% (253/506)
+capital-world: 28.8% (3386/11772)
+city-in-state: 64.1% (100/156)
+currency: 1.0% (6/600)
+family: 40.0% (168/420)
+gram1-adjective-to-adverb: 4.5% (36/800)
+gram2-opposite: 11.7% (24/206)
+gram3-comparative: 46.9% (408/870)
+gram4-superlative: 23.1% (117/506)
+gram5-present-participle: 17.7% (134/756)
+gram6-nationality-adjective: 68.8% (1129/1640)
+gram8-plural: 28.3% (377/1332)
+gram9-verb-aspect: 17.8% (16/90)
+Quadruplets with out-of-vocabulary words: 20.0%
+Semantic: 3913/13454, Accuracy: 29.08%
+Syntactic: 2241/6200, Accuracy: 36.15%
+Total accuracy: 31.3% (6154/19654)
+
+
+#http://dsmodels.nlp.ipipan.waw.pl/dsmodels/nkjp+wiki-forms-all-300-skipg-ns-50.txt.gz
+capital-common-countries: 59.1% (299/506)
+capital-world: 38.4% (3284/8556)
+city-in-state: 73.7% (115/156)
+currency: 2.9% (12/420)
+family: 54.0% (227/420)
+gram1-adjective-to-adverb: 13.2% (106/800)
+gram2-opposite: 29.3% (122/416)
+gram3-comparative: 80.3% (699/870)
+gram4-superlative: 54.7% (328/600)
+gram5-present-participle: 60.6% (458/756)
+gram6-nationality-adjective: 74.6% (1163/1560)
+gram8-plural: 41.2% (549/1332)
+gram9-verb-aspect: 25.4% (61/240)
+Quadruplets with out-of-vocabulary words: 32.3%
+Semantic: 3937/10058, Accuracy: 39.14%
+Syntactic: 3486/6574, Accuracy: 53.03%
+Total accuracy: 44.6% (7423/16632)

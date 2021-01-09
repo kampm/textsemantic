@@ -35,7 +35,7 @@ MmCorpus.serialize('wiki.mm', wiki)
 
 def print_accuracy(model):
     print('Evaluating...\n')
-    acc = model.wv.evaluate_word_analogies("questions-words-pl.txt")
+    acc = model.evaluate_word_analogies("questions-words-pl.txt")
 
     sem_correct = sum((len(acc[1][i]['correct']) for i in range(5)))
     sem_total = sum((len(acc[1][i]['correct']) +
@@ -79,9 +79,14 @@ params = {'vector_size': 300, 'window': 10, 'min_count': 40,
           'workers': 4, 'sample': 1e-3, }
 word2vec = Word2Vec(sentences, **params)
 
-word2vec = Word2Vec.load('wiki.word2vec.model')
+# from gensim.models.keyedvectors import KeyedVectors
+# glove_model = KeyedVectors.load_word2vec_format('data/nkjp+wiki-forms-all-300-skipg-ns-50.txt', binary=False)
+# qw = print_accuracy(glove_model)
+
+word2vec = Word2Vec.load('data/wiki-forms-all-100-cbow-ns-30-it100.txt')
 analogies(word2vec)
 qw = print_accuracy(word2vec)
+
 
 word2vec2 = Word2Vec(sentences,vector_size=300,window=10, min_count=40, workers=4, sample= 1e-3)
 analogies(word2vec2)
