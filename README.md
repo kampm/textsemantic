@@ -241,7 +241,7 @@ Type | Value
 11#FastText cbow lr 0.025 context window 10 dim 300 epoch 5 minCount 40 maxn 0 buckets 2000000 t 0.0001  
 12# [glove_100_3_polish](https://github.com/sdadas/polish-nlp-resources/releases/download/v1.0/glove.zip)  
 13# [glove_300_3_polish](https://github.com/sdadas/polish-nlp-resources/releases/download/glove-hd/glove_300_3_polish.zip.001)  
-[http://dsmodels.nlp.ipipan.waw.pl](http://dsmodels.nlp.ipipan.waw.pl)
+[http://dsmodels.nlp.ipipan.waw.pl](http://dsmodels.nlp.ipipan.waw.pl)  
 14#wiki-forms-all-100-cbow-ns-30-it100.txt  
 15#wiki-forms-all-100-cbow-hs  
 16#wiki-forms-all-100-cbow-ns.txt  

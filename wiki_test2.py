@@ -83,7 +83,7 @@ word2vec = Word2Vec(sentences, **params)
 # glove_model = KeyedVectors.load_word2vec_format('data/nkjp+wiki-forms-all-300-skipg-ns-50.txt', binary=False)
 # qw = print_accuracy(glove_model)
 
-word2vec = Word2Vec.load('data/wiki-forms-all-100-cbow-ns-30-it100.txt')
+word2vec = Word2Vec.load('wikifull.word2vec.model')
 analogies(word2vec)
 qw = print_accuracy(word2vec)
 
