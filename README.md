@@ -255,3 +255,7 @@ Type | Value
 24#wiki-forms-all-300-skipg-hs  
 25#wiki-forms-all-300-skipg-ns  
 26#nkjp+wiki-forms-all-300-skipg-ns-50  
+
+### Bokeh server + TSNE + Kmeans clustering
+
+![NLP bokeh](ffm.gif)

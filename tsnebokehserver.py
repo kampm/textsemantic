@@ -16,7 +16,7 @@ import bokeh.plotting as bp
 from bokeh.models import HoverTool, BoxSelectTool, Legend, LegendItem, Panel, ColumnDataSource
 from bokeh.plotting import figure, show, output_notebook
 from bokeh.io import output_file, show
-from bokeh.palettes import Category10_3, Category20_20, Category10_10
+from bokeh.palettes import Category10_3, Category20_20, Category10_10,Turbo256 
 from bokeh.transform import factor_cmap, factor_mark
 from bokeh.application.handlers import FunctionHandler
 from bokeh.models.widgets import CheckboxGroup, Slider, RangeSlider, Tabs
@@ -27,6 +27,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import pylab as plt
+import random
 import seaborn as sns
 import os
 os.chdir('F:\\PycharmProjects\\zajecia\\spyder\\semantic\\textsemantic\\')
@@ -42,7 +43,7 @@ def make_plot(src):
                x_axis_type=None, y_axis_type=None, min_border=1)
 
     p.scatter(x='x', y='y', source=src,
-              color=factor_cmap('categ', Category20_20, categ), legend='categ')
+              color=factor_cmap('categ',random.sample(Turbo256,n_clus), categ), legend='categ')
     hover = p.select(dict(type=HoverTool))
     hover.tooltips = {"word": "@words"}
 

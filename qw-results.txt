@@ -20,6 +20,25 @@ Semantic: 1767/7362, Accuracy: 24.00%
 Syntactic: 1175/4250, Accuracy: 27.65%
 Total accuracy: 25.3% (2942/11612)
 
+#FastText stopwordspl skipgram  w/o char n-grams lr 0.025 context window 10 dim 300 epoch 5 minCount 40 maxn 0 buckets 2000000 t 0.001
+capital-common-countries: 36.2% (152/420)
+capital-world: 23.6% (1416/6006)
+city-in-state: 41.7% (55/132)
+currency: 3.5% (16/462)
+family: 31.2% (75/240)
+gram1-adjective-to-adverb: 2.9% (17/588)
+gram2-opposite: 11.1% (6/54)
+gram3-comparative: 37.7% (174/462)
+gram4-superlative: 11.4% (24/210)
+gram5-present-participle: 7.1% (15/210)
+gram6-nationality-adjective: 37.6% (617/1640)
+gram8-plural: 24.8% (262/1056)
+gram9-verb-aspect: 23.3% (7/30)
+Quadruplets with out-of-vocabulary words: 53.2%
+Semantic: 1714/7260, Accuracy: 23.61%
+Syntactic: 1122/4250, Accuracy: 26.40%
+Total accuracy: 24.6% (2836/11510)
+
 #FastText skipgram char n-grams lr 0.025 context window 10 dim 300 epoch 5 minCount 40 minn 3 maxn 6 buckets 2000000 t 0.001
 Evaluating word analogies for top 300000 words in the model on questions-words-pl.txt
 capital-common-countries: 16.4% (69/420)
@@ -39,6 +58,26 @@ Quadruplets with out-of-vocabulary words: 52.7%
 Semantic: 385/7362, Accuracy: 5.23%
 Syntactic: 2623/4250, Accuracy: 61.72%
 Total accuracy: 25.9% (3008/11612)
+
+#FastText stopwordspl skipgram char n-grams lr 0.025 context window 10 dim 300 epoch 5 minCount 40 minn 3 maxn 6 buckets 2000000 t 0.001
+capital-common-countries: 13.8% (58/420)
+capital-world: 3.3% (198/6006)
+city-in-state: 11.4% (15/132)
+currency: 0.4% (2/462)
+family: 17.5% (42/240)
+gram1-adjective-to-adverb: 46.3% (272/588)
+gram2-opposite: 87.0% (47/54)
+gram3-comparative: 66.0% (305/462)
+gram4-superlative: 53.8% (113/210)
+gram5-present-participle: 82.9% (174/210)
+gram6-nationality-adjective: 84.4% (1384/1640)
+gram8-plural: 29.8% (315/1056)
+gram9-verb-aspect: 23.3% (7/30)
+Quadruplets with out-of-vocabulary words: 53.2%
+Semantic: 315/7260, Accuracy: 4.34%
+Syntactic: 2617/4250, Accuracy: 61.58%
+Total accuracy: 25.5% (2932/11510)
+
 
 #Word2Vec lr 0.025 context window 5 dim 100 epoch 5 minCount 5 
 Evaluating word analogies for top 300000 words in the model on questions-words-pl.txt
@@ -60,6 +99,28 @@ Quadruplets with out-of-vocabulary words: 16.8%
 Semantic: 1811/14024, Accuracy: 12.91%
 Syntactic: 921/6412, Accuracy: 14.36%
 Total accuracy: 13.4% (2732/20436)
+
+#Word2Vec skipwordspl lr 0.025 context window 5 dim 100 epoch 5 minCount 5 
+capital-common-countries: 29.4% (149/506)
+capital-world: 13.4% (1639/12210)
+city-in-state: 20.5% (27/132)
+currency: 1.6% (12/756)
+family: 27.8% (85/306)
+gram1-adjective-to-adverb: 2.8% (21/744)
+gram2-opposite: 3.4% (6/178)
+gram3-comparative: 24.1% (210/870)
+gram4-superlative: 8.5% (55/650)
+gram5-present-participle: 3.4% (26/756)
+gram6-nationality-adjective: 24.1% (396/1640)
+gram7-past-tense: 0.0% (0/110)
+gram8-plural: 13.5% (180/1332)
+gram9-verb-aspect: 6.4% (7/110)
+Quadruplets with out-of-vocabulary words: 17.4%
+Semantic: 1912/13910, Accuracy: 13.75%
+Syntactic: 901/6390, Accuracy: 14.10%
+Total accuracy: 13.9% (2813/20300)
+
+
 
 #Word2Vec lr 0.025 context window 5 dim 300 epoch 5 minCount 5 
 Evaluating word analogies for top 300000 words in the model on questions-words-pl.txt
@@ -101,6 +162,26 @@ Quadruplets with out-of-vocabulary words: 52.7%
 Semantic: 1666/7362, Accuracy: 22.63%
 Syntactic: 1157/4250, Accuracy: 27.22%
 Total accuracy: 24.3% (2823/11612)
+
+#Word2Vec stopwordspl lr 0.025 context window 10 dim 300 epoch 5 minCount 40 
+capital-common-countries: 34.5% (145/420)
+capital-world: 26.0% (1559/6006)
+city-in-state: 35.6% (47/132)
+currency: 3.2% (15/462)
+family: 30.0% (72/240)
+gram1-adjective-to-adverb: 5.3% (31/588)
+gram2-opposite: 11.1% (6/54)
+gram3-comparative: 39.0% (180/462)
+gram4-superlative: 12.9% (27/210)
+gram5-present-participle: 7.6% (16/210)
+gram6-nationality-adjective: 36.1% (592/1640)
+gram8-plural: 25.0% (264/1056)
+gram9-verb-aspect: 20.0% (6/30)
+Quadruplets with out-of-vocabulary words: 53.2%
+Semantic: 1838/7260, Accuracy: 25.32%
+Syntactic: 1122/4250, Accuracy: 26.40%
+Total accuracy: 25.7% (2960/11510)
+
 
 ~3h40m
 #Word2Vec lr 0.025 context window 10 dim 300 epoch 5 minCount 40 
