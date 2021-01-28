@@ -233,8 +233,8 @@ Type | Value
 3#Word2Vec lr 0.025 context window 5 dim 100 epoch 5 minCount 5  
 4#Word2Vec lr 0.025 context window 5 dim 300 epoch 5 minCount 5  
 5#Word2Vec lr 0.025 context window 10 dim 300 epoch 5 minCount 40  
-6#Word2Vec lr 0.025 context window 10 dim 300 epoch 5 minCount 40  
-7#FastText skipgram  w/o char n-grams lr 0.025 context window 10 dim 300 epoch 5 minCount 40 maxn 0 buckets 2000000 t 0.001  
+6#Word2Vec lr 0.025 context window 10 dim 300 epoch 5 minCount 40 (**10/10 plwiki**)  
+7#FastText skipgram  w/o char n-grams lr 0.025 context window 10 dim 300 epoch 5 minCount 40 maxn 0 buckets 2000000 t 0.001 (**10/10 plwiki**)  
 8#FastText cbow lr 0.05 context window 5 dim 100 epoch 5 minCount 5 minn 3 maxn 6 buckets 2000000 t 0.0001  
 9#FastText skipgram lr 0.05 context window 5 dim 100 epoch 5 minCount 5 minn 3 maxn 6 buckets 2000000 t 0.0001  
 10#FastText skipgram lr 0.025 context window 10 dim 300 epoch 5 minCount 40 maxn 0 buckets 2000000 t 0.0001  
