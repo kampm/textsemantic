@@ -8,17 +8,17 @@ Created on Sat Dec 12 13:25:02 2020
 
 import requests
 
-x = requests.get('https://harambelogs.pl/channel/demonzz1/2020/08/20')
+x = requests.get('')
 x.encoding
 for i in range(8,13,1):
     y=list()
     for j in range(1,32,1):
         # print (f' {i}  {j}')
-        x = requests.get(f'https://harambelogs.pl/channel/demonzz1/2020/{i}/{j}')
+        x = requests.get(f'')
         if x.status_code == 200:
             for a in x.text.split("\n"):
                 
-                y.append(a.replace(' #demonzz1 ', ' '))
+                y.append(a.replace('  ', ' '))
         else:
             print (f'blad {i}  {j}')
             
@@ -139,7 +139,7 @@ tweet_w2v.save("dem_ndim300_min5.model")
 #tweet_w2v= Word2Vec.load("dem_ndim300_min5.model")
 print(tweet_w2v['me'])
 
-print(tweet_w2v.most_similar('hitleronzz'))
+print(tweet_w2v.most_similar(''))
 
 ##word mistakes
 import nltk

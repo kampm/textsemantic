@@ -14,7 +14,7 @@ def download_data(channel_name):
     y=list()
     for i in tqdm(range(8,13,1)):
         for j in range(1,32,1):
-            x = requests.get(f'https://harambelogs.pl/channel/{channel_name}/2020/{i}/{j}')
+            x = requests.get(f'')
             if x.status_code == 200:
                 for a in x.text.split("\n"):
                     y.append(a.replace(f' #{channel_name} ', ' '))
@@ -31,7 +31,7 @@ def download_data(channel_name):
     print("-"*20)
     return dataDF
 
-data = download_data("mamm0n")    
+data = download_data("")    
 
 import gensim
 import numpy as np
