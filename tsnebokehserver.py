@@ -8,6 +8,7 @@ from bokeh.plotting import curdoc, figure
 from sklearn.cluster import KMeans
 import sys
 # import ncvis
+import umap
 from fast_tsne import fast_tsne
 import itertools
 # from mittens import Mittens, GloVe
@@ -19,7 +20,7 @@ from bokeh.io import output_file, show
 from bokeh.palettes import Category10_3, Category20_20, Category10_10,Turbo256 
 from bokeh.transform import factor_cmap, factor_mark
 from bokeh.application.handlers import FunctionHandler
-from bokeh.models.widgets import CheckboxGroup, Slider, RangeSlider, Tabs,Button
+from bokeh.models.widgets import CheckboxGroup,RadioGroup, Slider, RangeSlider, Tabs,Button
 from bokeh.layouts import column, row, WidgetBox
 from bokeh.application import Application
 # from sklearn.manifold import TSNE
@@ -63,19 +64,20 @@ def make_dataset(carrier_list):
 
 print("Loading file")
 word2vec = KeyedVectors.load_word2vec_format(
-    "glove_100_3_polish.txt", limit=10000)
+    "glove_100_3_polish.txt", limit=1000)
 print("Loading complete")
 
 word_vectors = [word2vec[w] for w in list(word2vec.index_to_key)]
 
-perplexity=50
+perplexity=50 #umap use nearset neighbors
 early_exag_coeff=50
 
 FIt_tsne_model = fast_tsne(word_vectors, perplexity=perplexity,
-                           early_exag_coeff=early_exag_coeff, seed=42)
-
+                            early_exag_coeff=early_exag_coeff, seed=42)
 
 tsne_df = pd.DataFrame(FIt_tsne_model, columns=['x', 'y'])
+umap_model = umap.UMAP(n_neighbors=perplexity,verbose=True)
+# tsne_df = pd.DataFrame(umap_model, columns=['x', 'y'])
 
 print("Kmeans..")
 kmeans = KMeans(init='k-means++', n_clusters=n_clus,
@@ -98,29 +100,41 @@ doc = curdoc()
 carrier_selection = CheckboxGroup(labels=list(
             tsne_df["categ"].unique()), active=list(range(len(tsne_df["categ"].unique()))))
 
+red_dim_selection = RadioGroup(labels=["TSNE", "UMAP"], active=0)
+red_dim_active = 0
 
 def update(attr, old, new):
     # Get the list of carriers for the graph
 
-    global n_clus,FIt_tsne_model,perplexity ,early_exag_coeff,carrier_selection, initial_carriers, src, p, layout, tab, tabs,select_all, categ, kmeans, vec, y_kmeans, tsne_df
+    global red_dim_active,umap_model, red_dim_selection, n_clus,FIt_tsne_model,perplexity ,early_exag_coeff,carrier_selection, initial_carriers, src, p, layout, tab, tabs,select_all, categ, kmeans, vec, y_kmeans, tsne_df
     carriers_to_plot = [carrier_selection.labels[i] for i in
                         carrier_selection.active]
 
     bin_width = binwidth_select.value
     perp_value = perplexity_select.value
     exag_value = early_exag_coeff_select.value
-    if((n_clus != bin_width) or (perplexity != perp_value) or (exag_value != early_exag_coeff)):
-        if((perplexity != perp_value) or (exag_value != early_exag_coeff)):
+    
+    if((red_dim_selection.active != red_dim_active) or (n_clus != bin_width) or (perplexity != perp_value) or (exag_value != early_exag_coeff)):
+        if((red_dim_selection.active != red_dim_active) or (perplexity != perp_value) or (exag_value != early_exag_coeff)):
+            red_dim_active = red_dim_selection.active
             early_exag_coeff = exag_value
             perplexity = perp_value
-            FIt_tsne_model = fast_tsne(word_vectors, perplexity=perplexity,
-                                       early_exag_coeff=early_exag_coeff, seed=42)
-            tsne_df = pd.DataFrame(FIt_tsne_model, columns=['x', 'y'])
+            if (red_dim_selection.active == 0):
+                FIt_tsne_model = fast_tsne(word_vectors, perplexity=perplexity,
+                                           early_exag_coeff=early_exag_coeff, seed=42)
+                tsne_df = pd.DataFrame(FIt_tsne_model, columns=['x', 'y'])
+            else:
+                umap_model = umap.UMAP(n_neighbors=perplexity,verbose=True).fit_transform(word_vectors)
+                tsne_df = pd.DataFrame(umap_model, columns=['x', 'y'])
 
         doc.remove_root(tabs)
         n_clus = bin_width  # number of clusters
         categ = list(map(str, range(0, n_clus, 1)))
-        tsne_df = pd.DataFrame(FIt_tsne_model, columns=['x', 'y'])
+        if (red_dim_selection.active == 0):
+            tsne_df = pd.DataFrame(FIt_tsne_model, columns=['x', 'y'])
+        else:
+            tsne_df = pd.DataFrame(umap_model, columns=['x', 'y'])
+            
         print("Kmeans..")
         kmeans = KMeans(init='k-means++', n_clusters=n_clus,
                         n_init=10, max_iter=2000, n_jobs=-1, random_state=42)
@@ -134,7 +148,7 @@ def update(attr, old, new):
         tsne_df['words'] = list(word2vec.index_to_key)
         carrier_selection = CheckboxGroup(labels=list(
             tsne_df["categ"].unique()), active=list(range(len(tsne_df["categ"].unique()))))
-        controls = WidgetBox(binwidth_select,perplexity_select,early_exag_coeff_select,select_all,carrier_selection)
+        controls = WidgetBox(red_dim_selection,binwidth_select,perplexity_select,early_exag_coeff_select,select_all,carrier_selection)
         initial_carriers = [carrier_selection.labels[i]
                             for i in carrier_selection.active]
         carrier_selection.on_change('active', update)
@@ -174,7 +188,7 @@ def unselect():
     carrier_selection.active = []
 select_all.on_click(unselect)
 
-controls = WidgetBox(binwidth_select,perplexity_select,early_exag_coeff_select,select_all,carrier_selection)
+controls = WidgetBox(red_dim_selection,binwidth_select,perplexity_select,early_exag_coeff_select,select_all,carrier_selection)
 
 initial_carriers = [carrier_selection.labels[i]
                     for i in carrier_selection.active]
@@ -183,6 +197,7 @@ carrier_selection.on_change('active', update)
 binwidth_select.on_change('value_throttled', update)
 perplexity_select.on_change('value_throttled', update)
 early_exag_coeff_select.on_change('value_throttled', update)
+red_dim_selection.on_change('active', update)
 
 src = make_dataset(initial_carriers)
 
