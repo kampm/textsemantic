@@ -72,6 +72,8 @@ word_vectors = [word2vec[w] for w in list(word2vec.index_to_key)]
 perplexity=50 #umap use nearset neighbors
 early_exag_coeff=50
 
+# https://distill.pub/2016/misread-tsne
+
 FIt_tsne_model = fast_tsne(word_vectors, perplexity=perplexity,
                             early_exag_coeff=early_exag_coeff, seed=42)
 

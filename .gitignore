@@ -91,3 +91,12 @@
 /runs/Feb13_21-39-52_DESKTOP-7C9Q98L/events.out.tfevents.1613248792.DESKTOP-7C9Q98L.11316.2
 /runs/Feb13_21-42-28_DESKTOP-7C9Q98L/1613248954.2089684/events.out.tfevents.1613248954.DESKTOP-7C9Q98L.3360.1
 /runs/Feb13_21-42-28_DESKTOP-7C9Q98L/events.out.tfevents.1613248954.DESKTOP-7C9Q98L.3360.0
+/bert-base-multilingual-cased-finetuned-polish-squad2/config.json
+/bert-base-multilingual-cased-finetuned-polish-squad2/nbest_predictions_.json
+/bert-base-multilingual-cased-finetuned-polish-squad2/null_odds_.json
+/bert-base-multilingual-cased-finetuned-polish-squad2/predictions_.json
+/bert-base-multilingual-cased-finetuned-polish-squad2/pytorch_model.bin
+/bert-base-multilingual-cased-finetuned-polish-squad2/special_tokens_map.json
+/bert-base-multilingual-cased-finetuned-polish-squad2/tokenizer_config.json
+/bert-base-multilingual-cased-finetuned-polish-squad2/traning_args.bin
+/bert-base-multilingual-cased-finetuned-polish-squad2/vocab.txt

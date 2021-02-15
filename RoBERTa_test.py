@@ -4,7 +4,7 @@ Created on Sat Feb 13 21:16:37 2021
 
 @author: Kamil
 """
-
+# pl model https://github.com/sdadas/polish-nlp-resources
 from pathlib import Path
 
 from tokenizers import ByteLevelBPETokenizer # Hugging Face’s
