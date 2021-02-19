@@ -539,3 +539,45 @@ Quadruplets with out-of-vocabulary words: 32.3%
 Semantic: 3937/10058, Accuracy: 39.14%
 Syntactic: 3486/6574, Accuracy: 53.03%
 Total accuracy: 44.6% (7423/16632)
+
+
+#w2v_allwiki_nkjp300_50.model http://mozart.ipipan.waw.pl/~axw/models/orth/ 
+capital-common-countries: 7.6% (32/420)
+capital-world: 5.4% (266/4970)
+city-in-state: 6.4% (10/156)
+currency: 1.8% (6/342)
+family: 35.5% (149/420)
+gram1-adjective-to-adverb: 11.1% (89/800)
+gram2-opposite: 8.2% (34/416)
+gram3-comparative: 41.2% (383/930)
+gram4-superlative: 17.5% (105/600)
+gram5-present-participle: 25.1% (204/812)
+gram6-nationality-adjective: 14.7% (229/1560)
+gram7-past-tense: 23.5% (248/1056)
+gram8-plural: 14.9% (198/1332)
+gram9-verb-aspect: 10.0% (24/240)
+Quadruplets with out-of-vocabulary words: 42.8%
+Semantic: 463/6308, Accuracy: 7.34%
+Syntactic: 1514/7746, Accuracy: 19.55%
+Total accuracy: 14.1% (1977/14054)
+
+
+#w2v_allwiki_nkjpfull_300.model http://mozart.ipipan.waw.pl/~axw/models/orth/ 
+capital-common-countries: 27.1% (137/506)
+capital-world: 22.1% (1364/6162)
+city-in-state: 35.9% (56/156)
+currency: 2.6% (9/342)
+family: 50.5% (192/380)
+gram1-adjective-to-adverb: 16.9% (135/800)
+gram2-opposite: 22.4% (93/416)
+gram3-comparative: 70.5% (613/870)
+gram4-superlative: 52.2% (241/462)
+gram5-present-participle: 62.4% (472/756)
+gram6-nationality-adjective: 65.5% (1022/1560)
+gram7-past-tense: 53.9% (438/812)
+gram8-plural: 18.5% (247/1332)
+gram9-verb-aspect: 18.3% (44/240)
+Quadruplets with out-of-vocabulary words: 39.8%
+Semantic: 1758/7546, Accuracy: 23.30%
+Syntactic: 3305/7248, Accuracy: 45.60%
+Total accuracy: 34.2% (5063/14794)

@@ -70,12 +70,17 @@ def extract_nlp(doc):
                                         'GPE', 'LOC'])
  }
 
-nlp = spacy.load('pl_core_news_sm')
+# https://spacy.io/models/pl
+# 3.0.0 / pl_core_news_md / pl_core_news_lg
+# components : tok2vec, morphologizer, parser, tagger, senter, ner, attribute_ruler, lemmatizer
+nlp = spacy.load('pl_core_news_sm') 
 nlp.pipeline
 nlp.pipe_names
 
-doc = nlp("Prognozy wskazują, że w najbliższych dniach może zostać pobity w Polsce rekord zimna. Temperatura ma spaść nawet do –40 stopni Celsjusza. Ostatni raz podobne mrozy odnotowano w naszym kraju w 1929 roku.")
+# doc = nlp("Prognozy wskazują, że w najbliższych dniach może zostać pobity w Polsce rekord zimna. Temperatura ma spaść nawet do –40 stopni Celsjusza. Ostatni raz podobne mrozy odnotowano w naszym kraju w 1929 roku.")
+doc = nlp("Naukowcy przyglądają się lodowcowi szelfowemu Brunt na Antarktydzie od początku 2019 r. Eksperci spodziewają się, że oderwanie gigantycznej góry lodowej nastąpi w najbliższym czasie, po tym jak pojawiły się nowe pęknięcia.")
 displacy.serve(doc, style="dep") # http://localhost:5000
+displacy.serve(doc, style="ent")
 pddoc = display_nlp(doc)
 # print([(w.text, w.pos_) for w in doc])
 
@@ -95,7 +100,10 @@ print(doc[0].morph.get("PronType"))
 
 print([token.lemma_ for token in doc]) #Lemmatization
 
-for ent in doc.ents: # Named Entity Recognition 
+# Named Entity Recognition sprawdzic https://github.com/CLARIN-PL/PolDeepNer
+# Training NER model https://github.com/practical-nlp/practical-nlp/blob/master/Ch5/04_NER_using_spaCy%20-%20CoNLL.ipynb
+# To illustrate the difference between a normal classifier and asequence classifier, consider the following sentence: “Washington is arainy state.” When a normal classifier sees this sentence and has toclassify it word by word, it has to make a decision as to whetherWashington refers to a person (e.g., George Washington) or the Stateof Washington without looking at the surrounding words. It’s possibleto classify the word “Washington” in this particular sentence as alocation only after looking at the context in which it’s being used. It’sfor this reason that sequence classifiers are used for training NER models
+for ent in doc.ents: # NER
     print(ent.text, ent.start_char, ent.end_char, ent.label_)
     
 for sent in doc.sents: #sentence segmenter
@@ -166,4 +174,3 @@ for sentence, pos_tag in samples:
  print ('Corresponding definition:', word_syn.definition() )
  
  
-# Named Entity Recognition sprawdzic https://github.com/CLARIN-PL/PolDeepNer

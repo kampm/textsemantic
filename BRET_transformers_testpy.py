@@ -27,6 +27,7 @@ for pred in nlp(f"Adam Mickiewicz wielkim polskim {nlp.tokenizer.mask_token} by≈
 # sequence = "The traffic began to slow down on Pioneer Boulevard in Los Angeles, making it difficult to get out of the city. However, WBGO was playing some cool jazz, and the weather was cool, making it rather pleasant to be making it out of the city on this Friday afternoon. Nat King Cole was singing as Jo and Maria slowly made their way out of LA and drove toward Barstow. They planned to get to Las Vegas early enough in the evening to have a nice dinner and go see a show."
 # nlp_qa(context=sequence, question='Where is Pioneer Boulevard ?')
 
+# BERT NER Example training model from pretrained https://github.com/practical-nlp/practical-nlp/blob/master/Ch5/05_BERT_CONLL_NER.ipynb
 # NER https://demo.allennlp.org/named-entity-recognition/fine-grained-ner
 nlp_ner = pipeline("ner",model="bert-base-multilingual-cased-finetuned-polish-squad2",
     tokenizer="bert-base-multilingual-cased-finetuned-polish-squad2"
