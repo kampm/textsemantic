@@ -43,3 +43,13 @@ qa_pipeline(context=sequence, question='Kto śpiewał?') # 'score': 0.9957380890
 qa_pipeline(context=sequence, question='Kto spiewał?') # 'score': 0.20145834982395172
 qa_pipeline(context=sequence, question='Kto przyjechał do Las Vegas?')
 print(nlp_ner(sequence))
+
+
+# 3CosAdd “what is to Portugal as Paris is to France?”. 
+# b∗ = argmax cos(w, a∗ − a + b) 
+# w∈V
+
+# 3CosMul
+# b∗ = argmax ( cos(b, w) × cos(w, a∗) / cos(w, a) )
+# w∈V
+

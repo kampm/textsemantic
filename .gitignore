@@ -137,3 +137,9 @@
 /w2v_allwiki_nkjpfull_300.model
 /w2v_allwiki_nkjpfull_300.model.syn0.npy
 /w2v_allwiki_nkjpfull_300.model.syn1neg.npy
+/roberta_base/config.json
+/roberta_base/pytorch_model.bin
+/roberta_base/tokenizer.json
+/roberta_large/config.json
+/roberta_large/pytorch_model.bin
+/roberta_large/tokenizer.json

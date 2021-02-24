@@ -17,13 +17,21 @@ import textacy # NLP, before and after spaCy
 
 def display_nlp(doc, include_punct=False):
  """Generate data frame for visualization of spaCy tokens."""
+# Text: The original word text.
+# Lemma: The base form of the word.
+# POS: The simple UPOS part-of-speech tag.
+# Tag: The detailed part-of-speech tag.
+# Dep: Syntactic dependency, i.e. the relation between tokens.
+# Shape: The word shape – capitalization, punctuation, digits.
+# is alpha: Is the token an alpha character?
+# is stop: Is the token part of a stop list, i.e. the most common words of the language?
  rows = []
  for i, t in enumerate(doc):
      if not t.is_punct or include_punct:
          row = {'token': i, 'text': t.text, 'lemma_':
             t.lemma_,
             'is_stop': t.is_stop, 'is_alpha': t.is_alpha,
-            'pos_': t.pos_, 'dep_': t.dep_,
+            'pos_': t.pos_,'tag_': t.tag_, 'dep_': t.dep_,
             'ent_type_': t.ent_type_, 'ent_iob_':
             t.ent_iob_}
          rows.append(row)
@@ -81,6 +89,7 @@ nlp.pipe_names
 doc = nlp("Naukowcy przyglądają się lodowcowi szelfowemu Brunt na Antarktydzie od początku 2019 r. Eksperci spodziewają się, że oderwanie gigantycznej góry lodowej nastąpi w najbliższym czasie, po tym jak pojawiły się nowe pęknięcia.")
 displacy.serve(doc, style="dep") # http://localhost:5000
 displacy.serve(doc, style="ent")
+# POS tagger API http://clarin.pelcra.pl/tools/tagger/ | https://krnnt-f3esrhez2q-ew.a.run.app/
 pddoc = display_nlp(doc)
 # print([(w.text, w.pos_) for w in doc])
 
