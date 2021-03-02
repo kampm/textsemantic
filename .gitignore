@@ -143,3 +143,13 @@
 /roberta_large/config.json
 /roberta_large/pytorch_model.bin
 /roberta_large/tokenizer.json
+/roberta_base_CDS_train_biencoder/0_Transformer/config.json
+/roberta_base_CDS_train_biencoder/0_Transformer/merges.txt
+/roberta_base_CDS_train_biencoder/0_Transformer/pytorch_model.bin
+/roberta_base_CDS_train_biencoder/0_Transformer/sentence_bert_config.json
+/roberta_base_CDS_train_biencoder/0_Transformer/special_tokens_map.json
+/roberta_base_CDS_train_biencoder/0_Transformer/tokenizer_config.json
+/roberta_base_CDS_train_biencoder/0_Transformer/vocab.json
+/roberta_base_CDS_train_biencoder/1_Pooling/config.json
+/roberta_base_CDS_train_biencoder/config.json
+/roberta_base_CDS_train_biencoder/modules.json

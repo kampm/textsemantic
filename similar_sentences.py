@@ -35,10 +35,11 @@ import pandas as pd
 from sentence_transformers import evaluation,losses, SentenceTransformer, util, models, InputExample
 from torch.utils.data import DataLoader
 # http://git.nlp.ipipan.waw.pl/Scwad/SCWAD-CDSCorpus/tree/master/CDSCorpus
-corpus = pd.read_csv('CDSCorpus/CDS_train.csv',sep='\t',error_bad_lines=False, encoding='utf-8')  
+corpus = pd.read_csv('CDSCorpus/CDS_train.csv',sep='\t',error_bad_lines=False, encoding='utf-8')# ,nrows=1000  
 corpus['relatedness_score'] = corpus['relatedness_score'].div(5)
 corpus_test = pd.read_csv('CDSCorpus/CDS_test.csv',sep='\t',error_bad_lines=False, encoding='utf-8')  
 corpus_test['relatedness_score'] = corpus_test['relatedness_score'].div(5)
+# label2int = {"CONTRADICTION": 0, "ENTAILMENT": 1, "NEUTRAL": 2}
 s1=[]
 s2=[]
 sc=[]
@@ -47,16 +48,19 @@ for index, row in corpus_test.iterrows():
     s1.append(row['sentence_A'])
     s2.append(row['sentence_B'])
     sc.append(row['relatedness_score'])
+    # sc.append(label2int[row['entailment_judgment']])
 
-evaluator = evaluation.EmbeddingSimilarityEvaluator(s1, s2, sc)
+evaluator = evaluation.EmbeddingSimilarityEvaluator(s1, s2, sc)# then change to corpus_test data
 
 
 # roberta_large requires more gpu memory
-word_embedding_model = models.Transformer('roberta_base', max_seq_length=256)
+word_embedding_model = models.Transformer('roberta_base', max_seq_length=512)
 pooling_model = models.Pooling(word_embedding_model.get_word_embedding_dimension())
 model = SentenceTransformer(modules=[word_embedding_model, pooling_model])
-train_examples = []
 
+
+train_examples = []
+test_examples = []
 for index, row in corpus.iterrows():
     train_examples.append(InputExample(texts=[row['sentence_A'], row['sentence_B']], label=row['relatedness_score'])) 
     s3.append(row['sentence_A'])
@@ -65,10 +69,11 @@ for index, row in corpus.iterrows():
 train_dataloader = DataLoader(train_examples, shuffle=True, batch_size=8)
 train_loss = losses.CosineSimilarityLoss(model)
 model.fit(train_objectives=[(train_dataloader, train_loss)],
-          epochs=1, warmup_steps=100, evaluator=evaluator, evaluation_steps=500)
+          epochs=5, warmup_steps=100, evaluator=evaluator, evaluation_steps=500)
 
-model.best_score #0.9232
+model.best_score #1epochs 0.9232 #5epochs 0.932
 model.evaluate(evaluator) #0.9232
+# model.save("roberta_base_CDS_train_biencoder")
 
 # -----------------------------------------------
 # from sentence_transformers import CrossEncoder
@@ -124,6 +129,14 @@ for query in queries:
         print(s3[hit['corpus_id']], "(Score: {:.4f})".format(hit['score']))
 
 
+# Paraphrase Mining - finding texts with similar meaning for large colections of sentences 10000+
+largecorpus =corpus_test['sentence_A'].unique()
+paraphrases = util.paraphrase_mining(model,largecorpus)
+
+df = pd.DataFrame.from_records(paraphrases)
+df[1] = [largecorpus[idx] for idx in df[1]] 
+df[2] = [largecorpus[idx] for idx in df[2]] 
+# df.to_csv("Paraphrase_Mining_pl.csv",index=False,header=["score","sentence1","sentence2"])
 
 
 import spacy
@@ -219,3 +232,25 @@ apple1.vector  # or apple1.tensor.sum(axis=0)
 # Ludzie biegną w wyścigu nocą . (Score: 0.9429)
 # Człowiek jedzie konno w pobliżu krzewów . (Score: 0.9420)
 # Delfin wystawia głowę i płetwy . (Score: 0.9411)
+
+
+# # distinct classes !!! not working/predicting
+# for index, row in corpus_test.iterrows():
+#     test_examples.append(InputExample(texts=[row['sentence_A'], row['sentence_B']], label=label2int[row['entailment_judgment']])) 
+    
+# for index, row in corpus.iterrows():
+#     train_examples.append(InputExample(texts=[row['sentence_A'], row['sentence_B']], label=label2int[row['entailment_judgment']])) 
+
+# from sentence_transformers.cross_encoder.evaluation import CEBinaryAccuracyEvaluator
+# from sentence_transformers import CrossEncoder
+# model = CrossEncoder('roberta_base', max_length=512, num_labels=3)
+# train_dataloader = DataLoader(train_examples, shuffle=True, batch_size=8)
+# evaluator =CEBinaryAccuracyEvaluator.from_input_examples(test_examples)
+# model.fit(train_dataloader,epochs=1, warmup_steps=100,evaluator=evaluator,evaluation_steps=1000)
+# model.predict([corpus_test["sentence_A"],corpus_test["sentence_B"]])
+# corpus_test["predictions"] = corpus_test[["sentence_A", "sentence_B"]].apply(
+#     lambda s: model.predict([s[0],s[1]]), axis=0
+# )
+
+# model.predict(["Żaden mężczyzna nie stoi na przystanku autobusowym .",
+# "Mężczyzna z żółtą i białą reklamówką w ręce stoi na przystanku obok autobusu ."])
