@@ -58,7 +58,6 @@ word_embedding_model = models.Transformer('roberta_base', max_seq_length=512)
 pooling_model = models.Pooling(word_embedding_model.get_word_embedding_dimension())
 model = SentenceTransformer(modules=[word_embedding_model, pooling_model])
 
-
 train_examples = []
 test_examples = []
 for index, row in corpus.iterrows():
@@ -80,7 +79,6 @@ model.evaluate(evaluator) #0.9232
 # model = CrossEncoder('roberta_base', max_length=256)
 # model.fit(train_dataloader,
 #           epochs=1, warmup_steps=100)
-
 
 # scores = model.predict([[sentences1,sentences2 ],[sentences3,sentences2],[sentences1,sentences3 ]])
 # #pretrained model 0.48104742, 0.48180264, 0.47577295

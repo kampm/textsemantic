@@ -9,6 +9,7 @@ Created on Mon Feb 15 15:04:13 2021
 # https://demo.allennlp.org/semantic-role-labeling
 # NLP research library, built on PyTorch and spaCy
 from allennlp_models.structured_prediction.models import srl_bert
+from allennlp.modules.token_embedders import BertEmbedder
 from allennlp.predictors.predictor import Predictor
 
 predictor = Predictor.from_path(
