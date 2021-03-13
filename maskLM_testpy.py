@@ -130,10 +130,18 @@ fill_mask("Sześć osób <mask> w hokeja na lodzie .")
 # for pred in fill_mask(f"Sześć osób {fill_mask.tokenizer.mask_token} w hokeja na lodzie ."):
 #   print(pred)
 
+# https://www.kaggle.com/kkkkkkk880/masklm-bert-hatepl
 #train=hate_speech_pl,block_size=100,epochs=5,batch=4
 #chodzi mi o normalnych <mask> a nie ortodoksów = _katolików,▁chrześcijan,_ludzi,_obywateli,▁prawosławnych
 #awanturujący się <mask> to przestępcy = ▁ludzie,eje,_,_gej,_policjanci
 # <mask> są bezwstydne i nie mają granic i hamluców = _kobiety,eje,_one,_gej,_baby
+
+#train=hate_speech_pl,block_size=500,epochs=5,batch=8
+#chodzi mi o normalnych <mask> a nie ortodoksów = ▁ludzi,▁chrześcijan,▁katolików,▁obywateli,▁facetów
+#awanturujący się <mask> to przestępcy = ▁ludzie,_gej,_arab,_mężczyżni,_politycy
+# <mask> są bezwstydne i nie mają granic i hamluców = _kobiety,_one,_,_która,_dzieci
+#<mask> są bezwstydne i nie mają granic i hamluców = które,oni,_one,słowa,ty
+
 
 #train=CDS_corpus,block_size=256,epochs=5,batch=4
 # <mask> w czerwonej bluzie stoi przy barierce nad wodą , a obok niego stoi oparta wędka . = Człowiek,Para,▁mężczyzna,Ludzie,▁Mężczyzna
