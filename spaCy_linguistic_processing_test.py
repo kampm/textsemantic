@@ -89,6 +89,7 @@ nlp.pipe_names
 doc = nlp("Naukowcy przyglądają się lodowcowi szelfowemu Brunt na Antarktydzie od początku 2019 r. Eksperci spodziewają się, że oderwanie gigantycznej góry lodowej nastąpi w najbliższym czasie, po tym jak pojawiły się nowe pęknięcia.")
 displacy.serve(doc, style="dep") # http://localhost:5000
 displacy.serve(doc, style="ent")
+# POS, lemmas http://stanza.run
 # POS tagger API http://clarin.pelcra.pl/tools/tagger/ | https://krnnt-f3esrhez2q-ew.a.run.app/
 pddoc = display_nlp(doc)
 # print([(w.text, w.pos_) for w in doc])
