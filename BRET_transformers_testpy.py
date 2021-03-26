@@ -218,7 +218,8 @@ test = get_conll_data('test')
 training["sentences"][0]
 
 
-unique_data = list(map(list, set(map(lambda i: tuple(i), test["tags"]))))
+
+unique_data = list(map(list, set(map(lambda i: tuple(i), training["tags"]))))
 result = list(set(x for l in unique_data for x in l))
 for r in result:
     print(f'"{r}",')

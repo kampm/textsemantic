@@ -4,6 +4,7 @@ Created on Mon Feb  8 20:27:01 2021
 
 @author: Kamil
 """
+# kaggle https://www.kaggle.com/kkkkkkk880/grammatical-classes-nkjp-nested-simplified-v2
 # Semantyka: Obejmuje badanie znaczenia w języku i może być dalej podzielona na semantykę leksykalną i kompozycyjną.
 # - Semantyka leksykalna: Badanie znaczeń słów i symboli za pomocą morfologii i składni.
 # - Semantyka kompozycyjna: Badanie relacji między słowami i kombinacji słów oraz rozumienie znaczeń fraz i zdań oraz tego, jak są one powiązane. 
@@ -81,12 +82,13 @@ def extract_nlp(doc):
 # https://spacy.io/models/pl
 # 3.0.0 / pl_core_news_md / pl_core_news_lg
 # components : tok2vec, morphologizer, parser, tagger, senter, ner, attribute_ruler, lemmatizer
-nlp = spacy.load('pl_core_news_sm') 
+nlp = spacy.load('pl_core_news_lg') 
 nlp.pipeline
 nlp.pipe_names
 
 # doc = nlp("Prognozy wskazują, że w najbliższych dniach może zostać pobity w Polsce rekord zimna. Temperatura ma spaść nawet do –40 stopni Celsjusza. Ostatni raz podobne mrozy odnotowano w naszym kraju w 1929 roku.")
-doc = nlp("Naukowcy przyglądają się lodowcowi szelfowemu Brunt na Antarktydzie od początku 2019 r. Eksperci spodziewają się, że oderwanie gigantycznej góry lodowej nastąpi w najbliższym czasie, po tym jak pojawiły się nowe pęknięcia.")
+# doc = nlp("Naukowcy przyglądają się lodowcowi szelfowemu Brunt na Antarktydzie od początku 2019 r. Eksperci spodziewają się, że oderwanie gigantycznej góry lodowej nastąpi w najbliższym czasie, po tym jak pojawiły się nowe pęknięcia.")
+doc = nlp("Przykład oznacza, że jeżeli A ALE NIE B jest fałszywe lub prawodpodobnie prawdziwe wtedy C będzie definitywnie, ale niekoniecznie większe niż suma A i B.")
 displacy.serve(doc, style="dep") # http://localhost:5000
 displacy.serve(doc, style="ent")
 # POS, lemmas http://stanza.run
