@@ -255,7 +255,7 @@ Total accuracy: 13% (3249/24570)
 
 
 
-#########git models 
+#########git models https://github.com/sdadas/polish-nlp-resources
 
 #https://github.com/sdadas/polish-nlp-resources/releases/download/v1.0/glove.zip
 #glove_100_3_polish
@@ -333,6 +333,7 @@ Total accuracy: 62.4% (8705/13960)
 
 
 
+#####http://dsmodels.nlp.ipipan.waw.pl
 
 #http://dsmodels.nlp.ipipan.waw.pl/dsmodels/wiki-forms-all-100-cbow-ns-30-it100.txt.gz
 capital-common-countries: 21.9% (111/506)
@@ -593,6 +594,7 @@ Semantic: 3937/10058, Accuracy: 39.14%
 Syntactic: 3486/6574, Accuracy: 53.03%
 Total accuracy: 44.6% (7423/16632)
 
+#####http://mozart.ipipan.waw.pl
 
 #w2v_allwiki_nkjp300_50.model http://mozart.ipipan.waw.pl/~axw/models/orth/ 
 capital-common-countries: 7.6% (32/420)
