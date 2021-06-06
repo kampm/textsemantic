@@ -258,27 +258,80 @@ Total accuracy: 13% (3249/24570)
 #########git models 
 
 #https://github.com/sdadas/polish-nlp-resources/releases/download/v1.0/glove.zip
+#glove_100_3_polish
+capital-common-countries: 76.1% (289/380)
+capital-world: 57.9% (5508/9506)
+currency: 2.6% (17/650)
+family: 54.0% (147/272)
+gram1-adjective-to-adverb: 29.4% (252/858)
+gram2-opposite: 21.8% (130/596)
+gram3-comparative: 41.7% (5/12)
+gram4-superlative: 16.7% (1/6)
+gram6-nationality-adjective: 91.3% (1216/1332)
+gram8-plural: 71.4% (30/42)
+gram9-verb-aspect: 19.6% (60/306)
+Quadruplets with out-of-vocabulary words: 43.2%
+Semantic: 5961/10808, Accuracy: 55.15%
+Syntactic: 1694/3152, Accuracy: 53.74%
+Total accuracy: 54.8% (7655/13960)
+
+
+
+#https://drive.google.com/open?id=1yfReM7EJGL1vk2dNbyM7X10I6k6lJMuX
+#fasttext_100_3_polish
+capital-common-countries: 36.1% (137/380)
+capital-world: 11.1% (1036/9312)
+currency: 1.7% (11/650)
+family: 46.7% (127/272)
+gram1-adjective-to-adverb: 52.1% (447/858)
+gram2-opposite: 82.3% (451/548)
+gram3-comparative: 58.3% (7/12)
+gram4-superlative: 83.3% (5/6)
+gram6-nationality-adjective: 68.9% (918/1332)
+gram8-plural: 21.4% (9/42)
+gram9-verb-aspect: 17.0% (52/306)
+Quadruplets with out-of-vocabulary words: 44.2%
+Semantic: 1311/10614, Accuracy: 12.35%
+Syntactic: 1889/3104, Accuracy: 60.86%
+Total accuracy: 23.3% (3200/13718)
+
+#https://drive.google.com/open?id=1t2NsXHE0x5MfUvPR5MDV3_2TlxtdLkzz
+#word2vec_100_3_polish
+capital-common-countries: 42.4% (161/380)
+capital-world: 29.7% (2825/9506)
+currency: 5.2% (34/650)
+family: 62.9% (171/272)
+gram1-adjective-to-adverb: 34.3% (294/858)
+gram2-opposite: 23.7% (141/596)
+gram3-comparative: 58.3% (7/12)
+gram4-superlative: 16.7% (1/6)
+gram6-nationality-adjective: 71.5% (952/1332)
+gram8-plural: 31.0% (13/42)
+gram9-verb-aspect: 22.9% (70/306)
+Quadruplets with out-of-vocabulary words: 43.2%
 Semantic: 3191/10808, Accuracy: 29.52%
 Syntactic: 1478/3152, Accuracy: 46.89%
 Total accuracy: 33.4% (4669/13960)
 
 
 #https://github.com/sdadas/polish-nlp-resources/releases/download/glove-hd/glove_300_3_polish.zip.001
-capital-common-countries: 60.0% (228/380)
-capital-world: 38.3% (3640/9506)
-currency: 7.5% (49/650)
-family: 70.6% (192/272)
-gram1-adjective-to-adverb: 34.3% (294/858)
-gram2-opposite: 31.7% (189/596)
-gram3-comparative: 58.3% (7/12)
+capital-common-countries: 86.8% (330/380)
+capital-world: 67.3% (6395/9506)
+currency: 3.7% (24/650)
+family: 63.6% (173/272)
+gram1-adjective-to-adverb: 35.0% (300/858)
+gram2-opposite: 27.2% (162/596)
+gram3-comparative: 50.0% (6/12)
 gram4-superlative: 16.7% (1/6)
-gram6-nationality-adjective: 84.6% (1127/1332)
-gram8-plural: 45.2% (19/42)
-gram9-verb-aspect: 25.5% (78/306)
+gram6-nationality-adjective: 91.3% (1216/1332)
+gram8-plural: 71.4% (30/42)
+gram9-verb-aspect: 22.2% (68/306)
 Quadruplets with out-of-vocabulary words: 43.2%
-Semantic: 4109/10808, Accuracy: 38.02%
-Syntactic: 1715/3152, Accuracy: 54.41%
-Total accuracy: 41.7% (5824/13960)
+Semantic: 6922/10808, Accuracy: 64.05%
+Syntactic: 1783/3152, Accuracy: 56.57%
+Total accuracy: 62.4% (8705/13960)
+
+
 
 
 #http://dsmodels.nlp.ipipan.waw.pl/dsmodels/wiki-forms-all-100-cbow-ns-30-it100.txt.gz

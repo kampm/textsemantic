@@ -118,7 +118,7 @@ print(f"After memmap {sys.getsizeof(glove.vectors)}")
 models[f"SIF-Glove"] = SIF(glove, components=15)
 models[f"uSIF-Glove"] = uSIF(glove,length=11)
 
-ft = FastTextKeyedVectors.load("C:/Users/Kamil/Downloads/fasttext_100_3_polish.bin")
+ft = FastTextKeyedVectors.load("D:/fasttext_300_3_polish.bin")
 models[f"CBOW-FT"] = Average(ft, lang_freq="pl")
 models[f"SIF-FT"] = SIF(ft, components=10)
 models[f"uSIF-FT"] = uSIF(ft, length=11)
@@ -180,6 +180,10 @@ uSIF-Glove    64.50
 CBOW-FT    47.23
 SIF-FT     77.21
 uSIF-FT    79.74
+#fasttext 300dim
+CBOW-FT    49.45
+SIF-FT     78.31
+uSIF-FT    81.42
 #w2v 100dim
 CBOW-W2V    36.78
 SIF-W2V     63.05

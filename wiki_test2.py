@@ -79,14 +79,15 @@ params = {'vector_size': 300, 'window': 10, 'min_count': 40,
           'workers': 4, 'sample': 1e-3, }
 word2vec = Word2Vec(sentences, **params)
 
-# from gensim.models.keyedvectors import KeyedVectors
-# glove_model = KeyedVectors.load_word2vec_format('data/nkjp+wiki-forms-all-300-skipg-ns-50.txt', binary=False)
-# qw = print_accuracy(glove_model)
 
-word2vec = Word2Vec.load('wikifull.word2vec.model')
+
+from gensim.models.keyedvectors import KeyedVectors
+glove_model = KeyedVectors.load('ft100_3/fasttext_100_3_polish.bin')
+qw = print_accuracy(glove_model)
+
+word2vec = KeyedVectors.load_word2vec_format("ft100_3/glove_100_3_polish.txt")
 analogies(word2vec)
 qw = print_accuracy(word2vec)
-
 
 word2vec2 = Word2Vec(sentences,vector_size=300,window=10, min_count=40, workers=4, sample= 1e-3)
 analogies(word2vec2)

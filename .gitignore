@@ -238,3 +238,15 @@
 /wolne-lektury/tokenizer_config.json
 /wolne-lektury/wolne-lektury.sliding8.txt
 /run_mlmpy.py
+/chat.log
+/data/glove_wv.vectors
+/vecs.tsv
+/modelchat2moredata.bin
+/modelchat2moredatav2.bin
+/out2.csv
+/out4.csv
+/out5.csv
+/out6.csv
+/ft100_3/glove_300_3_polish.txt
+/kmeans_data.csv
+/meta.tsv

@@ -5,7 +5,12 @@ bokeh serve --show F:\PycharmProjects\zajecia\spyder\semantic\textsemantic\tsneb
 """
 
 from bokeh.plotting import curdoc, figure
+#sklearn speedup
+import numpy as np
+from sklearnex import patch_sklearn
+patch_sklearn()
 from sklearn.cluster import KMeans
+##
 import sys
 # import ncvis
 import umap
@@ -26,7 +31,6 @@ from bokeh.application import Application
 # from sklearn.manifold import TSNE
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
 import pylab as plt
 import random
 import seaborn as sns
@@ -64,7 +68,7 @@ def make_dataset(carrier_list):
 
 print("Loading file")
 word2vec = KeyedVectors.load_word2vec_format(
-    "glove_100_3_polish.txt", limit=1000)
+    "glove_100_3_polish.txt", limit=10000)
 print("Loading complete")
 
 word_vectors = [word2vec[w] for w in list(word2vec.index_to_key)]
@@ -80,6 +84,8 @@ FIt_tsne_model = fast_tsne(word_vectors, perplexity=perplexity,
 tsne_df = pd.DataFrame(FIt_tsne_model, columns=['x', 'y'])
 umap_model = umap.UMAP(n_neighbors=perplexity,verbose=True)
 # tsne_df = pd.DataFrame(umap_model, columns=['x', 'y'])
+
+
 
 print("Kmeans..")
 kmeans = KMeans(init='k-means++', n_clusters=n_clus,
